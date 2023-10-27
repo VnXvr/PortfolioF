@@ -1,0 +1,438 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kanit", sans-serif;
+  user-select: none;
+  background-color: #171717;
+}
+
+/* =============================================== GLITCH ====================================================*/
+
+.glitch-wrapper {
+  overflow: hidden; /* Hide the overflowing content */
+  position: relative; /* Set the position to relative */
+}
+
+/* ==================================== SLIDE ANIMATION =========================================*/
+.glitch.nav-item {
+  opacity: 0; /* Start with the element hidden */
+  transform: translateX(-100%); /* Move the element outside the viewport to the left */
+  animation: slideIn 1.6s forwards ease-out; /* Apply the animation */
+}
+
+@keyframes slideIn {
+  to {
+      opacity: 1; /* Fade the element in */
+      transform: translateX(0); /* Move the element back to its original position */
+  }
+}
+
+.glitch-wrapper {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+
+  background-color: #171717;
+}
+
+.glitch {
+  position: relative;
+  font-size: 80px;
+  font-weight: 200;
+  line-height: 1.2;
+  color: #fff;
+  letter-spacing: 5px;
+  z-index: 1;
+}
+
+.glitch:before {
+  content: attr(data-glitch);
+  position: absolute;
+  top: 0;
+  left: -2px;
+  width: 100%;
+  color: #fff;
+  background-color: #171717;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+  animation: noise-before 3s infinite linear alternate-reverse;
+}
+
+.glitch:after {
+  content: attr(data-glitch);
+  position: absolute;
+  top: 0;
+  left: 2px;
+  width: 100%;
+  color: #fff;
+  background-color: #171717;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+  animation: noise-after 2s infinite linear alternate-reverse;
+}
+
+@keyframes noise-before {
+  0% {
+    clip: rect(61px, 9999px, 52px, 0);
+  }
+
+  5% {
+    clip: rect(33px, 9999px, 144px, 0);
+  }
+
+  10% {
+    clip: rect(121px, 9999px, 115px, 0);
+  }
+
+  15% {
+    clip: rect(144px, 9999px, 162px, 0);
+  }
+
+  20% {
+    clip: rect(62px, 9999px, 180px, 0);
+  }
+
+  25% {
+    clip: rect(34px, 9999px, 42px, 0);
+  }
+
+  30% {
+    clip: rect(147px, 9999px, 179px, 0);
+  }
+
+  35% {
+    clip: rect(99px, 9999px, 63px, 0);
+  }
+
+  40% {
+    clip: rect(188px, 9999px, 122px, 0);
+  }
+
+  45% {
+    clip: rect(154px, 9999px, 14px, 0);
+  }
+
+  50% {
+    clip: rect(63px, 9999px, 37px, 0);
+  }
+
+  55% {
+    clip: rect(161px, 9999px, 147px, 0);
+  }
+
+  60% {
+    clip: rect(109px, 9999px, 175px, 0);
+  }
+
+  65% {
+    clip: rect(157px, 9999px, 88px, 0);
+  }
+
+  70% {
+    clip: rect(173px, 9999px, 131px, 0);
+  }
+
+  75% {
+    clip: rect(62px, 9999px, 70px, 0);
+  }
+
+  80% {
+    clip: rect(24px, 9999px, 153px, 0);
+  }
+
+  85% {
+    clip: rect(138px, 9999px, 40px, 0);
+  }
+
+  90% {
+    clip: rect(79px, 9999px, 136px, 0);
+  }
+
+  95% {
+    clip: rect(25px, 9999px, 34px, 0);
+  }
+
+  100% {
+    clip: rect(173px, 9999px, 166px, 0);
+  }
+}
+
+@keyframes noise-after {
+  0% {
+    clip: rect(26px, 9999px, 33px, 0);
+  }
+
+  5% {
+    clip: rect(140px, 9999px, 198px, 0);
+  }
+
+  10% {
+    clip: rect(184px, 9999px, 89px, 0);
+  }
+
+  15% {
+    clip: rect(121px, 9999px, 6px, 0);
+  }
+
+  20% {
+    clip: rect(181px, 9999px, 99px, 0);
+  }
+
+  25% {
+    clip: rect(154px, 9999px, 133px, 0);
+  }
+
+  30% {
+    clip: rect(134px, 9999px, 169px, 0);
+  }
+
+  35% {
+    clip: rect(26px, 9999px, 187px, 0);
+  }
+
+  40% {
+    clip: rect(147px, 9999px, 137px, 0);
+  }
+
+  45% {
+    clip: rect(31px, 9999px, 52px, 0);
+  }
+
+  50% {
+    clip: rect(191px, 9999px, 109px, 0);
+  }
+
+  55% {
+    clip: rect(74px, 9999px, 54px, 0);
+  }
+
+  60% {
+    clip: rect(145px, 9999px, 75px, 0);
+  }
+
+  65% {
+    clip: rect(153px, 9999px, 198px, 0);
+  }
+
+  70% {
+    clip: rect(99px, 9999px, 136px, 0);
+  }
+
+  75% {
+    clip: rect(118px, 9999px, 192px, 0);
+  }
+
+  80% {
+    clip: rect(1px, 9999px, 83px, 0);
+  }
+
+  85% {
+    clip: rect(145px, 9999px, 98px, 0);
+  }
+
+  90% {
+    clip: rect(121px, 9999px, 154px, 0);
+  }
+
+  95% {
+    clip: rect(156px, 9999px, 44px, 0);
+  }
+
+  100% {
+    clip: rect(67px, 9999px, 122px, 0);
+  }
+}
+
+/* ==================================== GLITCH =========================================*/
+
+.nav-item {
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Delay each nav item with 1.5 seconds */
+.nav-item:nth-child(1) {
+  animation-delay: 1.5s;
+}
+
+.nav-item:nth-child(2) {
+  animation-delay: 1.7s;
+}
+
+.nav-item:nth-child(3) {
+  animation-delay: 2s;
+}
+
+.nav-item:nth-child(4) {
+  animation-delay: 2.3s;
+}
+
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  justify-content: center;
+  margin: auto;
+}
+
+.glitch-wrapper {
+  justify-content: flex-start;
+}
+
+.nav-right{
+  width: 30%;
+  justify-content: space-between;
+}
+
+.nav-item {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+/* =============================================== CONTENT ====================================================*/
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-from-left-animation {
+  animation: slideFromLeft 1.5s ease-in-out;
+}
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.intro-picture {
+  transition: transform 0.3s ease;
+}
+
+.intro-picture:hover {
+  transform: rotate(
+    -5deg
+  ); /* Adjust the degree value for the desired tilt angle */
+}
+
+
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  align-items: center;
+  background-color: #171717;
+  height: 8vh;
+  font-weight: 200;
+}
+
+.nav-item:hover {
+  color: #00e673;
+  cursor: pointer;
+  transition: ease-in 0.2s;
+}
+
+.nav-item {
+  color: white;
+  font-size: 1.2rem;
+}
+
+/* ====================================================================== WORKS ======================================================================*/
+
+/* Add a CSS keyframes animation for the cascading effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content {
+  padding-top: 20vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 50vh;
+  width: 80%;
+  margin: auto;
+  animation: fadeIn 1.7s ease 0.5s forwards; /* Apply fadeIn animation with a slight delay */
+}
+
+.name {
+  color: #00e673;
+  font-weight: 400;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.intro-picture {
+  width: 25%;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main p {
+  font-size: 4.2rem;
+  color: white;
+}
+
+.resume-button {
+  background-color: #333; /* Black background color */
+  color: #fff; /* White text color */
+  padding: 10px 20px; /* Padding around the text */
+  font-size: 1rem; /* Font size */
+  border: none; /* Remove button border */
+  cursor: pointer; /* Show hand cursor on hover */
+  transition: 1s ease-in; /* Add transition effect */
+}
+
+.resume-button:hover {
+  background-color: #555; /* Darker black background color on hover */
+}
+
+/* ====================================================================== WORKS ======================================================================*/
+
+.works {
+  margin-top: 42vh;
+  height: 85vh;
+  background-color: gray;
+}
